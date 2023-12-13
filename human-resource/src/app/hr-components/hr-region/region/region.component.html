@@ -1,0 +1,17 @@
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col">
+      <form >
+        <input type="text" placeholder="Enter Region Id">
+        <button class="btn btn-primary"  name="regionId" [(ngModel)]="regionId" (onclick)="search()">Search</button>
+      </form>     
+      <ul >
+        <li  *ngFor="let region of allRegions">
+        <p>{{region.regionName}}</p>
+        <!-- <p>{{region.getRegionId()}}</p> -->
+        </li>
+        
+      </ul>
+    </div>
+  </div>  
+</div>
