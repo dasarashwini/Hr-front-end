@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+         <form (ngSubmit)="addCountry()">
+          <div class="card mt-4">
+            <div class="card-header bg-success text-white">
+                <h2>Add Country</h2>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="countryId">Country Id</label>
+                <input type="text" 
+                class="form-control"
+                placeholder="Enter Country Id"
+                id="countryId"
+                name="countryId"
+                [(ngModel)]="newCountry.countryId"
+                >
+                <label for="regionName">Region Name</label>
+                <input type="text" 
+                class="form-control"
+                placeholder="Enter Country Name"
+                id="regionName"
+                name="regionName"
+                [(ngModel)]="newCountry.countryName"
+                >
+                <label for="regionName">Region Id</label>
+                <input type="text" 
+                class="form-control"
+                placeholder="Enter Region Id"
+                id="regionId"
+                name="regionId"
+                [(ngModel)]="newCountry.regionsPojo.regionId"
+                >
+              </div>          
+            </div>
+            <div class="card-footer  bg-success">
+              <button type="submit"
+              class="btn btn-light text-success mr-5">
+              Add
+              </button>
+              <button type="reset"
+              class="btn btn-light text-success mx-5">
+              Clear
+              </button>
+            </div>
+            </div>
+         </form>
+      </div>
+      <div class="col-3"></div>
+
+  </div>
+
+</div>
