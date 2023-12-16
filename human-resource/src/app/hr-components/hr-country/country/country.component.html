@@ -1,1 +1,51 @@
-<p>country works!</p>
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col">
+      <div>
+        <form>
+          <input type="text" placeholder="Enter Country Id" name="CountryId" [(ngModel)]="CountryId">
+            <button type="button" class="btn btn-success" (click)="getCountryById()">Search</button>
+          </form>
+        </div>
+        <div *ngIf="selectedCountry">
+          <p>Selected Country:</p>
+          <p>{{ selectedCountry.countryId }}</p>
+          <p>{{ selectedCountry.countryName }}</p>
+          <p>{{selectedCountry.regionsPojo.regionId}}</p>
+          <button type="button" class="btn btn-warning" (click)="viewAll()">Back</button>
+          <!-- Display other properties as needed -->
+        </div>
+
+        <div *ngIf="!selectedCountry">
+          <button class="btn btn-warning" (click)="addLocation()">Add</button>
+
+          <table  class="table bg-dark">
+            <thead class="bg-dark text-light">
+              <tr class="text-center">
+                <th>Country ID</th>
+                <th>Countries</th>
+                <th>Region ID</th>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="text-center" *ngFor="let country of allCountries">
+                <td>{{ country.countryId }}</td>
+                <td>{{ country.countryName }}</td>
+                <td>{{ country.regionsPojo.regionId }}</td>
+                <td>
+                  <button (click)="updateCountry(country.countryId,country.countryName,country.regionsPojo.regionId)">Update</button>
+                </td>
+                <td>
+                  <button (click)="deleteCountry(country.countryId)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
