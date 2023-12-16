@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+         <form (ngSubmit)="updateLocation()">
+          <div class="card mt-4">
+            <div class="card-header bg-success text-white">
+                <h2>UPDATE LOCATION</h2>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="locationId">Location Id</label>
+                <input type="text"
+                class="form-control"
+                placeholder="Enter Location Id"
+                id="locationId"
+                name="locationId"
+                [(ngModel)]="location.locationsId"
+                >
+                <label for="streetAddress">Street Adress</label>
+                <input type="text"
+                class="form-control"
+                placeholder="Enter Street Address"
+                id="streetAddress"
+                name="streetAddress"
+                [(ngModel)]="location.streetAddress"
+                >
+                <label for="postalCode">postal code</label>
+                <input type="text"
+                class="form-control"
+                placeholder="Enter postal Code"
+                id="cipostalCodety"
+                name="cipostalCodety"
+                [(ngModel)]="location.postalCode"
+                >
+                <label for="city">city</label>
+                <input type="text"
+                class="form-control"
+                placeholder="Enter City Name"
+                id="city"
+                name="city"
+                [(ngModel)]="location.city"
+                >
+                <label for="stateProvince">State Province</label>
+                <input type="text"
+                class="form-control"
+                placeholder="Enter State Province"
+                id="stateProvince"
+                name="stateProvince"
+                [(ngModel)]="location.stateProvince"
+                >
+                <label for="countryId">Country Id</label>
+                <input type="text"
+                class="form-control"
+                placeholder="Enter Country Id "
+                id="countryId"
+                name="countryId"
+                [(ngModel)]="location.countriesPojo.countryId"
+                >
+              </div>          
+            </div>
+            <div class="card-footer  bg-success">
+              <button type="submit"
+              class="btn btn-light text-success mr-5" >
+              Update
+              </button>
+              <button type="reset"
+              class="btn btn-light text-success mx-5">
+              Clear
+              </button>
+            </div>
+            </div>
+         </form>
+      </div>
+      <div class="col-3"></div>
+    </div>
+</div>
